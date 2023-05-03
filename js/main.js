@@ -24,7 +24,6 @@ const Weather = {
   },
   displayWeather: function (data) {
     document.querySelector(".app__result").removeAttribute("hidden");
-    console.log(data);
     fetchPhotos(data.name);
     document.querySelector(".cityName").innerText = data.name;
     document.querySelector(".temp").innerText = Math.round(data.main.temp);
@@ -37,20 +36,15 @@ const Weather = {
       .setAttribute("src", `${this.apiIconUrl}${data.weather[0].icon}.png`);
   },
 };
-
 document.addEventListener("submit", function () {
   event.preventDefault();
   Weather.startSearch(event.target);
 });
-
 const CLIENT_ID = "ZYTD44efX6CLGiAb_wI7Yxmcd04aiPkD6m-6q4Gnab0";
 const fetchPhotos = async (cityName) => {
-  console.log(cityName);
   const url = `https://api.unsplash.com/search/photos?client_id=${CLIENT_ID}&query=${cityName}`;
   const response = await fetch(url);
-  console.log(response);
   const data = await response.json();
-  console.log(data);
   if (response.ok) {
     document.querySelector(
       ".app"
