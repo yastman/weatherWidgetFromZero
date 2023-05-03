@@ -45,6 +45,7 @@ document.addEventListener("submit", function () {
 
 const CLIENT_ID = "ZYTD44efX6CLGiAb_wI7Yxmcd04aiPkD6m-6q4Gnab0";
 const fetchPhotos = async (cityName) => {
+  git;
   console.log(cityName);
   // fetchPhotos(cityName);
   const url = `https://api.unsplash.com/search/photos?client_id=${CLIENT_ID}&query=Lviv`;
